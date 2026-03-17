@@ -29,3 +29,9 @@ Thumbs.db
 # Authentication
 authToken
 .auth
+
+#Docs
+ARCHITECTURE.md
+IMPLEMENTATION_GUIDE.md
+INTEGRATION_PLAN.md
+INTEGRATION_SUMMARY.md
