@@ -6,13 +6,14 @@ import {
   updateClinic,
   deleteClinic
 } from "../controllers/clinicController.js";
+import { validateClinic } from "../validators/clinicValidator.js";
 
 const router = express.Router();
 
 router.get("/", getAllClinics);
 router.get("/:id", getClinicById);
-router.post("/", createClinic);
-router.put("/:id", updateClinic);
+router.post("/", validateClinic, createClinic);
+router.put("/:id", validateClinic, updateClinic);
 router.delete("/:id", deleteClinic);
 
 export default router;

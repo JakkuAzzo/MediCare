@@ -7,6 +7,7 @@ import patientRoutes from "./routes/patientRoutes.js";
 import appointmentRoutes from "./routes/appointmentRoutes.js";
 import staffRoutes from "./routes/staffRoutes.js";
 import vaccineRoutes from "./routes/vaccineRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -29,7 +30,11 @@ app.get("/", (req, res) => {
       appointments: "GET/POST/PUT/DELETE /api/appointments",
       clinics: "GET/POST/PUT/DELETE /api/clinics",
       vaccines: "GET/POST/PUT/DELETE /api/vaccines",
-      staff: "GET/POST/PUT/DELETE /api/staff"
+      staff: "GET/POST/PUT/DELETE /api/staff",
+      auth: {
+        signup: "POST /api/auth/signup",
+        forgotPassword: "POST /api/auth/forgot-password"
+      }
     }
   });
 });
@@ -43,5 +48,6 @@ app.use("/api/patients", patientRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/staff", staffRoutes);
 app.use("/api/vaccines", vaccineRoutes);
+app.use("/api/auth", authRoutes);
 
 export default app;

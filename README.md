@@ -155,6 +155,10 @@ Expected response:
    - `PUT /api/staff/:id` – Update staff
    - `DELETE /api/staff/:id` – Delete staff
 
+6. **Auth**
+  - `POST /api/auth/signup` – Create an account
+  - `POST /api/auth/forgot-password` – Request password reset
+
 ## Request/Response Examples
 
 ### Create Patient
