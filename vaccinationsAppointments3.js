@@ -1,0 +1,42 @@
+const vaccinations = [
+  {
+    VaccinationID: 3,
+    VaccinationAppointmentID: 3,
+    VaccinationVaccineID: 1,
+    VaccinationOutcomeID: 1,
+    VaccinationVaccineName: 'Hepatitis A',
+    VaccinationVaccineCost: '65.00',
+  },
+  {
+    VaccinationID: 4,
+    VaccinationAppointmentID: 3,
+    VaccinationVaccineID: 5,
+    VaccinationOutcomeID: 1,
+    VaccinationVaccineName: 'Rabies',
+    VaccinationVaccineCost: '95.00',
+  },
+  {
+    VaccinationID: 5,
+    VaccinationAppointmentID: 3,
+    VaccinationVaccineID: 9,
+    VaccinationOutcomeID: 1,
+    VaccinationVaccineName: 'Yellow fever',
+    VaccinationVaccineCost: '85.00',
+  },
+  {
+    VaccinationID: 6,
+    VaccinationAppointmentID: 3,
+    VaccinationVaccineID: 4,
+    VaccinationOutcomeID: 1,
+    VaccinationVaccineName: 'Hepatitis B',
+    VaccinationVaccineCost: '60.00',
+  },
+  {
+    VaccinationID: 7,
+    VaccinationAppointmentID: 3,
+    VaccinationVaccineID: 8,
+    VaccinationOutcomeID: 1,
+    VaccinationVaccineName: 'Measles / Mumps / Rubella (MMR)',
+    VaccinationVaccineCost: '40.00',
+  },
+];
