@@ -7,7 +7,8 @@ This guide provides exact code implementations for integrating the React fronten
 ## Phase 1: Setup & Authentication (COMPLETED ✓)
 
 ### What's Already Done
-- ✓ API configuration (`src/config/api.js`) 
+
+- ✓ API configuration (`src/config/api.js`)
 - ✓ AuthContext with login/logout (`src/context/AuthContext.jsx`)
 - ✓ ProtectedRoute wrapper (`src/components/ProtectedRoute.jsx`)
 - ✓ LoginPage functional form
@@ -16,13 +17,14 @@ This guide provides exact code implementations for integrating the React fronten
 - ✓ Environment configuration files
 
 ### Next Step
+
 Verify backend API is running and test login at `http://localhost:5173/login`
 
 ---
 
 ## Phase 2: Clinics Page (First User Story)
 
-**User Story:** *As a Patient, I want to search for clinics, so that I can find a convenient location.*
+**User Story:** _As a Patient, I want to search for clinics, so that I can find a convenient location._
 
 ### Step 1: Update ClinicsPage.jsx
 
@@ -65,10 +67,14 @@ export default function ClinicsPage() {
     setSearchTerm(term);
     const filtered = clinics.filter(
       (clinic) =>
-        (clinic.name && clinic.name.toLowerCase().includes(term.toLowerCase())) ||
-        (clinic.location && clinic.location.toLowerCase().includes(term.toLowerCase())) ||
-        (clinic.ClinicName && clinic.ClinicName.toLowerCase().includes(term.toLowerCase())) ||
-        (clinic.ClinicAddress && clinic.ClinicAddress.toLowerCase().includes(term.toLowerCase()))
+        (clinic.name &&
+          clinic.name.toLowerCase().includes(term.toLowerCase())) ||
+        (clinic.location &&
+          clinic.location.toLowerCase().includes(term.toLowerCase())) ||
+        (clinic.ClinicName &&
+          clinic.ClinicName.toLowerCase().includes(term.toLowerCase())) ||
+        (clinic.ClinicAddress &&
+          clinic.ClinicAddress.toLowerCase().includes(term.toLowerCase()))
     );
     setFilteredClinics(filtered);
   };
@@ -80,18 +86,21 @@ export default function ClinicsPage() {
     <div className="page">
       <h1>Clinics</h1>
       <p>Search for clinics to find a convenient location for vaccination</p>
-      
-      <SearchBar 
-        placeholder="Search by clinic name or location..." 
+
+      <SearchBar
+        placeholder="Search by clinic name or location..."
         onSearch={handleSearch}
       />
-      
+
       {filteredClinics.length === 0 && searchTerm && (
-        <p className="text-center" style={{ marginTop: "2rem", color: "#7f8c8d" }}>
+        <p
+          className="text-center"
+          style={{ marginTop: "2rem", color: "#7f8c8d" }}
+        >
           No clinics found matching "{searchTerm}"
         </p>
       )}
-      
+
       <ClinicTable clinics={filteredClinics} />
     </div>
   );
@@ -138,6 +147,7 @@ export default function ClinicTable({ clinics, onEdit, onDelete }) {
 ```
 
 ### Testing Phase 2
+
 1. Start backend: `npm start` (in backend directory)
 2. Start frontend: `npm run dev`
 3. Login with test credentials
@@ -150,9 +160,10 @@ export default function ClinicTable({ clinics, onEdit, onDelete }) {
 ## Phase 3: Patient CRUD (Second User Story)
 
 **User Stories:**
-- *As a Manager, I want to create patient accounts*
-- *As a Manager, I want to edit patient information*
-- *As a Manager, I want to delete patient accounts*
+
+- _As a Manager, I want to create patient accounts_
+- _As a Manager, I want to edit patient information_
+- _As a Manager, I want to delete patient accounts_
 
 ### Step 1: Update PatientsPage.jsx
 
@@ -162,10 +173,7 @@ import { useNavigate } from "react-router-dom";
 import LoadingMessage from "../components/common/LoadingMessage";
 import ErrorMessage from "../components/common/ErrorMessage";
 import PatientTable from "../components/tables/PatientTable";
-import {
-  getPatients,
-  deletePatient
-} from "../services/patientService";
+import { getPatients, deletePatient } from "../services/patientService";
 
 export default function PatientsPage() {
   const [patients, setPatients] = useState([]);
@@ -210,7 +218,13 @@ export default function PatientsPage() {
 
   return (
     <div className="page">
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}
+      >
         <h1>Patients</h1>
         <button
           onClick={() => navigate("/patients/new")}
@@ -301,9 +315,9 @@ export default function PatientFormPage({ mode }) {
     <div className="page">
       <h1>{mode === "create" ? "Add New Patient" : "Edit Patient"}</h1>
       {error && <ErrorMessage message={error} />}
-      <PatientForm 
-        patient={patient} 
-        onSubmit={handleSubmit} 
+      <PatientForm
+        patient={patient}
+        onSubmit={handleSubmit}
         isLoading={isSaving}
       />
     </div>
@@ -394,7 +408,9 @@ export default function PatientForm({
           required
         />
         {validationErrors.PatientFirstname && (
-          <span className="error-text">{validationErrors.PatientFirstname}</span>
+          <span className="error-text">
+            {validationErrors.PatientFirstname}
+          </span>
         )}
       </div>
 
@@ -518,6 +534,7 @@ export default function PatientTable({ patients, onDelete }) {
 ```
 
 ### Testing Phase 3
+
 1. Navigate to /patients
 2. Click "Add Patient" button
 3. Fill form and submit (test POST)
@@ -530,9 +547,10 @@ export default function PatientTable({ patients, onDelete }) {
 ## Phase 4: Appointments CRUD
 
 **User Stories:**
-- *As a Patient, I want to book appointments*
-- *As a Manager, I want to reschedule appointments*
-- *As a Manager, I want to cancel appointments*
+
+- _As a Patient, I want to book appointments_
+- _As a Manager, I want to reschedule appointments_
+- _As a Manager, I want to cancel appointments_
 
 ### Implementation Pattern
 
@@ -546,6 +564,7 @@ Follow the same pattern as Phase 3 (Patients):
 ### Key Differences for Appointments
 
 **Form needs dropdowns for:**
+
 - PatientID (fetch patients list)
 - ClinicID (fetch clinics list)
 - StaffID (fetch staff list)
@@ -586,6 +605,7 @@ async function loadDropdownData() {
 Follow the same pattern as Patient CRUD.
 
 **Fields:**
+
 - VaccineName (text, required)
 - VaccineCost (number, optional)
 
@@ -625,7 +645,7 @@ export const fieldMappings = {
 export function mapFromBackend(data, entityType) {
   const mapping = fieldMappings[entityType];
   if (!mapping) return data;
-  
+
   const mapped = { ...data };
   Object.entries(mapping).forEach(([backendKey, frontendKey]) => {
     if (backendKey in data && frontendKey !== backendKey) {
@@ -647,11 +667,11 @@ export function mapFromBackend(data, entityType) {
 async function apiCall(promise) {
   try {
     const response = await promise;
-    
+
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       const message = errorData.message || `Error: ${response.statusText}`;
-      
+
       if (response.status === 401) {
         // Redirect to login
         localStorage.removeItem("authToken");
@@ -665,10 +685,10 @@ async function apiCall(promise) {
       } else if (response.status >= 500) {
         throw new Error("Server error. Please try again later.");
       }
-      
+
       throw new Error(message);
     }
-    
+
     return response.json();
   } catch (error) {
     throw error;
@@ -681,6 +701,7 @@ async function apiCall(promise) {
 ## Testing Checklist
 
 ### Phase 2 (Clinics)
+
 - [ ] Can load clinic list
 - [ ] Can search by name
 - [ ] Can search by location
@@ -688,6 +709,7 @@ async function apiCall(promise) {
 - [ ] Empty state displays correctly
 
 ### Phase 3 (Patients)
+
 - [ ] Can load patient list
 - [ ] Can create patient with valid data
 - [ ] Form validation prevents invalid submissions
@@ -696,6 +718,7 @@ async function apiCall(promise) {
 - [ ] Changes persist on page reload
 
 ### Phase 4 (Appointments)
+
 - [ ] Can load appointment list
 - [ ] Dropdown lists populated correctly
 - [ ] Can create appointment with valid data
@@ -708,6 +731,7 @@ async function apiCall(promise) {
 ## Deployment Checklist
 
 Before deploying to production:
+
 - [ ] Update `.env.production` with real API URL
 - [ ] Test all CRUD operations with production API
 - [ ] Verify logout clears auth token
@@ -721,21 +745,27 @@ Before deploying to production:
 ## Common Issues & Solutions
 
 ### Issue: 401 Unauthorized on API calls
+
 **Solution:** Check that auth token is being sent in Authorization header
+
 ```javascript
 const token = localStorage.getItem("authToken");
 console.log("Token:", token); // Debug
 ```
 
 ### Issue: CORS errors
+
 **Solution:** Ensure backend has CORS enabled for frontend URL:
+
 ```
 Allow-Origin: http://localhost:5173
 Allow-Credentials: true
 ```
 
 ### Issue: Form field names don't match backend
+
 **Solution:** Create field mapping in service layer:
+
 ```javascript
 // Before sending to API
 const mappedData = {
@@ -754,4 +784,3 @@ const mappedData = {
 4. Implement role-based features (clinician vs manager views)
 5. Add appointment reminder notifications
 6. Implement vaccination history tracking
-

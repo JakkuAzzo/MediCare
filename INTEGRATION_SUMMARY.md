@@ -9,6 +9,7 @@ You now have a **complete integration plan** and **working foundation** for conn
 ## What's Ready (Phase 1 ✓)
 
 ### Core Infrastructure Complete
+
 - ✅ **Authentication System**
   - Login/logout functionality with JWT token management
   - Automatic token refresh and session validation
@@ -39,7 +40,9 @@ You now have a **complete integration plan** and **working foundation** for conn
 ## Integration Documents
 
 ### 1. **INTEGRATION_PLAN.md** (Main Reference)
+
 Complete specification of the integration architecture covering:
+
 - API endpoint expectations and mapping
 - Service layer configuration patterns
 - State management and lifecycle patterns
@@ -52,12 +55,14 @@ Complete specification of the integration architecture covering:
 **Read this when:** You need to understand the overall integration strategy
 
 ### 2. **IMPLEMENTATION_GUIDE.md** (Code-by-Code)
+
 Phase-by-phase implementation with **exact code examples**:
+
 - **Phase 1:** Setup & Auth (✓ COMPLETE)
 - **Phase 2:** Clinics page with search
 - **Phase 3:** Patient CRUD (create/edit/delete)
 - **Phase 4:** Appointments CRUD
-- **Phase 5:** Vaccines CRUD  
+- **Phase 5:** Vaccines CRUD
 - **Phase 6:** Staff view
 - Error handling best practices
 - Testing checklist for each phase
@@ -66,7 +71,9 @@ Phase-by-phase implementation with **exact code examples**:
 **Read this when:** Implementing a specific feature or phase
 
 ### 3. **ARCHITECTURE.md** (Reference & Quick Lookup)
+
 System design documentation including:
+
 - System architecture diagram (ASCII art)
 - Data flow examples for key operations
 - Complete field mapping reference for all entities
@@ -85,6 +92,7 @@ System design documentation including:
 ### Immediate Next Steps (Today)
 
 1. **Review the plan**
+
    ```bash
    cat ARCHITECTURE.md        # Understand the system design
    cat INTEGRATION_PLAN.md    # Understand the full strategy
@@ -105,30 +113,35 @@ System design documentation including:
 ### Week-by-Week Implementation (Recommended)
 
 #### Week 1: Phase 2 (Clinics)
+
 - Implement ClinicsPage with real API calls
 - Add search functionality
 - Test GET endpoint
 - **Deliverable:** Working clinics browser with search
 
 #### Week 2: Phase 3 (Patients)
+
 - Implement PatientsPage with list
 - Implement patient form (create/edit)
 - Test POST, PUT, DELETE endpoints
 - **Deliverable:** Fully functional patient CRUD
 
 #### Week 3: Phase 4 (Appointments)
+
 - Implement appointments page and form
 - Add dropdown population for related entities
 - Test all CRUD operations
 - **Deliverable:** Appointment booking system
 
 #### Week 4: Phase 5 (Vaccines)
+
 - Implement vaccines CRUD
 - Implement Staff view
 - Add any refinements
 - **Deliverable:** Complete feature coverage
 
 #### Week 5: Polish
+
 - Add loading states and success notifications
 - Test error scenarios
 - Add pagination if needed
@@ -140,20 +153,25 @@ System design documentation including:
 ## Key Technical Decisions
 
 ### 1. JWT Token Management
+
 - Tokens stored in `localStorage` with key `authToken`
 - Automatically included in all API requests
 - Invalid tokens trigger automatic logout and redirect to login
 - User state persists across page reloads while token is valid
 
 ### 2. Service Layer Pattern
+
 Each service file (clinicService, patientService, etc.):
+
 - Imports centralized API config and auth headers
 - Exports async functions for GET/POST/PUT/DELETE
 - Throws errors with descriptive messages
 - Enables easy switching between real API and mock data
 
 ### 3. Page Component Pattern
+
 All data pages follow:
+
 1. `useState` for data, loading, error
 2. `useEffect` to load data on mount
 3. Async function to fetch from service
@@ -161,7 +179,9 @@ All data pages follow:
 5. Render data when ready
 
 ### 4. Form Submission Pattern
+
 All forms include:
+
 1. Controlled inputs with onChange handlers
 2. Local validation with error messages
 3. Submit handler that calls service
@@ -173,6 +193,7 @@ All forms include:
 ## Testing Strategy
 
 ### Manual Testing (Phase-by-Phase)
+
 ```
 Each phase should test:
 ✓ Data loads from API
@@ -186,6 +207,7 @@ Each phase should test:
 ```
 
 ### Automated Testing (Future)
+
 ```
 Consider adding:
 - Unit tests for service functions
@@ -199,6 +221,7 @@ Consider adding:
 ## Troubleshooting Reference
 
 ### Login Not Working
+
 ```javascript
 1. Check: Is backend running on localhost:3000?
 2. Check: Is login endpoint at /api/auth/login?
@@ -208,6 +231,7 @@ Consider adding:
 ```
 
 ### API Calls Failing
+
 ```javascript
 1. Check: Is auth token in localStorage?
    → localStorage.getItem("authToken")
@@ -220,6 +244,7 @@ Consider adding:
 ```
 
 ### Form Not Submitting
+
 ```javascript
 1. Check: Are all required fields filled?
 2. Check: Do field names match backend expectations?
@@ -229,6 +254,7 @@ Consider adding:
 ```
 
 ### Page Not Loading Data
+
 ```javascript
 1. Check: Browser console for errors
 2. Check: Network tab for failed requests
@@ -272,18 +298,21 @@ Documentation/
 ## Success Criteria
 
 ### Phase 1 (Auth) ✓
+
 - [x] Login page functional
 - [x] JWT token stored and sent with requests
 - [x] Protected routes work
 - [x] Logout clears auth
 
 ### Phase 2 (Clinics)
+
 - [ ] Clinics load from /api/clinics
 - [ ] Search filters results
 - [ ] No 401 errors
 - [ ] Handles network errors gracefully
 
 ### Phase 3 (Patients)
+
 - [ ] List loads from /api/patients
 - [ ] Create patient (POST) works
 - [ ] Edit patient (PUT) works
@@ -292,9 +321,11 @@ Documentation/
 - [ ] Changes persist on reload
 
 ### Phase 4+ (Other entities)
+
 - [ ] Similar success criteria for each entity
 
 ### Final
+
 - [ ] All 5 entities support full CRUD
 - [ ] No console errors
 - [ ] Responsive on mobile
@@ -308,21 +339,25 @@ Documentation/
 ## Maintenance & Future Enhancements
 
 ### After Phase 1 (Auth)
+
 - Add "forgot password" flow
 - Add email verification
 - Add role-based access control
 
 ### After Phase 3 (Patient CRUD)
+
 - Add patient search/filter
 - Add patient history view
 - Add import/export functionality
 
 ### After Phase 4 (Appointments)
+
 - Add calendar view
 - Add appointment reminders
 - Add appointment confirmation emails
 
 ### Long-term
+
 - Add offline functionality (ServiceWorker)
 - Add real-time updates (WebSocket)
 - Add data caching strategy
@@ -339,7 +374,7 @@ Recommended commits for each phase:
 # Phase 2
 git commit -m "Implement clinics list with search functionality"
 
-# Phase 3  
+# Phase 3
 git commit -m "Implement patient CRUD with forms and validation"
 
 # Phase 4
@@ -430,6 +465,7 @@ npm start                # Start backend on localhost:3000
    - ARCHITECTURE.md for reference
 
 2. **Enable debugging**
+
    ```javascript
    // In service file
    console.log("Calling API:", url, data);
@@ -438,6 +474,7 @@ npm start                # Start backend on localhost:3000
    ```
 
 3. **Test with curl**
+
    ```bash
    curl -H "Authorization: Bearer TOKEN" \
      http://localhost:3000/api/patients
@@ -464,6 +501,7 @@ You have a **complete, production-ready foundation** with:
 **What's left is executing the phases** following the IMPLEMENTATION_GUIDE.md, which provides exact code for each step.
 
 ### Start Now
+
 ```bash
 1. Open ARCHITECTURE.md to understand the system
 2. Make sure backend is running and check endpoints
@@ -476,4 +514,3 @@ You have a **complete, production-ready foundation** with:
 **Estimated timeline: 4-5 weeks for complete implementation**
 
 Good luck! 🚀
-

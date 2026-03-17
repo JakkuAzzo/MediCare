@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import ErrorMessage from "../components/common/ErrorMessage";
 
@@ -8,8 +8,10 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchParams] = useSearchParams();
   const { login } = useAuth();
   const navigate = useNavigate();
+  const signupSuccess = searchParams.get("signup") === "success";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +38,15 @@ export default function LoginPage() {
       <div className="login-box">
         <h1>Travel Jabs</h1>
         <p className="login-subtitle">Vaccination Management System</p>
+
+        {signupSuccess && (
+          <div className="success-message">
+            <p>
+              ✓ Account created successfully! Please log in with your
+              credentials.
+            </p>
+          </div>
+        )}
 
         {error && <ErrorMessage message={error} />}
 
@@ -74,6 +85,15 @@ export default function LoginPage() {
             {isLoading ? "Logging in..." : "Login"}
           </button>
         </form>
+
+        <div className="auth-links">
+          <p>
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </p>
+          <p>
+            Don't have an account? <Link to="/signup">Sign up here</Link>
+          </p>
+        </div>
 
         <p className="login-footer">
           Demo credentials: Use your registered account to login

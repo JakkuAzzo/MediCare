@@ -176,6 +176,54 @@ p {
   margin-top: 1.5rem;
 }
 
+.auth-links {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.auth-links p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.auth-links a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.auth-links a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.success-message {
+  background-color: #d5f4e6;
+  color: #27ae60;
+  border-left: 4px solid #2ecc71;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.success-message p {
+  margin: 0.5rem 0;
+}
+
+.text-muted {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.form-help-text {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
 /* Container */
 .page-container {
   max-width: 1200px;

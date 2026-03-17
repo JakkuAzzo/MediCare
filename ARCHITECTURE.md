@@ -95,6 +95,7 @@
 ## Data Flow Examples
 
 ### Login Flow
+
 ```
 User inputs credentials
      ↓
@@ -118,6 +119,7 @@ User redirected to Dashboard
 ```
 
 ### List Patients Flow
+
 ```
 User navigates to /patients
      ↓
@@ -141,6 +143,7 @@ Renders <tr> for each patient
 ```
 
 ### Create Patient Flow
+
 ```
 User navigates to /patients/new
      ↓
@@ -168,6 +171,7 @@ Page reloads list showing new patient
 ```
 
 ### Delete Patient Flow
+
 ```
 User clicks Delete button on row
      ↓
@@ -195,54 +199,60 @@ Table updates and patient row disappears
 ## Field Mapping Reference
 
 ### Clinics
-| Frontend | Backend | Type | Required |
-|----------|---------|------|----------|
-| id | ClinicID | number | ✓ |
-| name | ClinicName | string | ✓ |
-| location | ClinicAddress | string | ✓ |
-| phone | ClinicPhone | string | |
-| email | ClinicEmail | string | |
 
-### Patients  
-| Frontend | Backend | Type | Required |
-|----------|---------|------|----------|
-| id | PatientID | number | ✓ |
-| firstName | PatientFirstname | string | ✓ |
-| lastName | PatientLastname | string | ✓ |
-| address | PatientAddress | string | |
-| postcode | PatientPostcode | string | |
-| age | Patientage | number | |
+| Frontend | Backend       | Type   | Required |
+| -------- | ------------- | ------ | -------- |
+| id       | ClinicID      | number | ✓        |
+| name     | ClinicName    | string | ✓        |
+| location | ClinicAddress | string | ✓        |
+| phone    | ClinicPhone   | string |          |
+| email    | ClinicEmail   | string |          |
+
+### Patients
+
+| Frontend  | Backend          | Type   | Required |
+| --------- | ---------------- | ------ | -------- |
+| id        | PatientID        | number | ✓        |
+| firstName | PatientFirstname | string | ✓        |
+| lastName  | PatientLastname  | string | ✓        |
+| address   | PatientAddress   | string |          |
+| postcode  | PatientPostcode  | string |          |
+| age       | Patientage       | number |          |
 
 ### Appointments
-| Frontend | Backend | Type | Required |
-|----------|---------|------|----------|
-| id | AppointmentID | number | ✓ |
-| dateTime | AppointmentDatetime | datetime | ✓ |
-| patientId | AppointmentPatientID | number | ✓ |
-| clinicId | AppointmentClinicID | number | ✓ |
-| staffId | AppointmentStaffID | number | |
-| statusId | AppointmentStatusID | number | |
+
+| Frontend  | Backend              | Type     | Required |
+| --------- | -------------------- | -------- | -------- |
+| id        | AppointmentID        | number   | ✓        |
+| dateTime  | AppointmentDatetime  | datetime | ✓        |
+| patientId | AppointmentPatientID | number   | ✓        |
+| clinicId  | AppointmentClinicID  | number   | ✓        |
+| staffId   | AppointmentStaffID   | number   |          |
+| statusId  | AppointmentStatusID  | number   |          |
 
 ### Vaccines
-| Frontend | Backend | Type | Required |
-|----------|---------|------|----------|
-| id | VaccineID | number | ✓ |
-| name | VaccineName | string | ✓ |
-| cost | VaccineCost | decimal | |
+
+| Frontend | Backend     | Type    | Required |
+| -------- | ----------- | ------- | -------- |
+| id       | VaccineID   | number  | ✓        |
+| name     | VaccineName | string  | ✓        |
+| cost     | VaccineCost | decimal |          |
 
 ### Staff
-| Frontend | Backend | Type | Required |
-|----------|---------|------|----------|
-| id | StaffID | number | ✓ |
-| firstName | StaffFirstname | string | ✓ |
-| lastName | StaffLastname | string | ✓ |
-| role | StaffRole | string | |
+
+| Frontend  | Backend        | Type   | Required |
+| --------- | -------------- | ------ | -------- |
+| id        | StaffID        | number | ✓        |
+| firstName | StaffFirstname | string | ✓        |
+| lastName  | StaffLastname  | string | ✓        |
+| role      | StaffRole      | string |          |
 
 ---
 
 ## API Endpoint Reference
 
 ### Authentication Endpoints
+
 ```
 POST   /api/auth/login
   Request: {email, password}
@@ -262,6 +272,7 @@ POST   /api/auth/register (optional)
 ```
 
 ### Clinic Endpoints
+
 ```
 GET    /api/clinics
   Response: [{ClinicID, ClinicName, ClinicAddress, ...}, ...]
@@ -282,6 +293,7 @@ DELETE /api/clinics/:id
 ```
 
 ### Patient Endpoints
+
 ```
 GET    /api/patients
   Response: [{PatientID, PatientFirstname, PatientLastname, ...}, ...]
@@ -301,23 +313,26 @@ DELETE /api/patients/:id
   Response: {success: true}
 ```
 
-*(Similar patterns for appointments, vaccines, staff)*
+_(Similar patterns for appointments, vaccines, staff)_
 
 ---
 
 ## Environment Configuration
 
 ### Development (.env)
+
 ```
 VITE_API_URL=http://localhost:3000/api
 ```
 
 ### Production (.env.production)
+
 ```
 VITE_API_URL=https://api.traveljabs.com/api
 ```
 
 ### Access in Code
+
 ```javascript
 const baseUrl = import.meta.env.VITE_API_URL;
 // Dev: http://localhost:3000/api
@@ -329,12 +344,14 @@ const baseUrl = import.meta.env.VITE_API_URL;
 ## Authentication Token Management
 
 ### Storage
+
 - **Location:** localStorage
 - **Key:** authToken
 - **Format:** JWT Bearer token
 - **Lifetime:** Set by backend (typically 24h or 7d)
 
 ### Sending with Requests
+
 ```javascript
 // All requests include:
 headers: {
@@ -343,6 +360,7 @@ headers: {
 ```
 
 ### Logout
+
 ```javascript
 1. Remove from localStorage: localStorage.removeItem("authToken")
 2. Clear user state: setUser(null)
@@ -351,6 +369,7 @@ headers: {
 ```
 
 ### Token Expiration
+
 ```
 If 401 Unauthorized response:
 1. Remove token from localStorage
@@ -363,17 +382,19 @@ If 401 Unauthorized response:
 ## Error Handling
 
 ### Response Status Codes
-| Code | Meaning | Frontend Action |
-|------|---------|-----------------|
-| 200 | Success | Use response data |
-| 201 | Created | Show success message |
-| 400 | Bad Request | Show validation error |
-| 401 | Unauthorized | Redirect to /login |
-| 403 | Forbidden | Show permission error |
-| 404 | Not Found | Show "resource not found" |
-| 500 | Server Error | Show "try again later" |
+
+| Code | Meaning      | Frontend Action           |
+| ---- | ------------ | ------------------------- |
+| 200  | Success      | Use response data         |
+| 201  | Created      | Show success message      |
+| 400  | Bad Request  | Show validation error     |
+| 401  | Unauthorized | Redirect to /login        |
+| 403  | Forbidden    | Show permission error     |
+| 404  | Not Found    | Show "resource not found" |
+| 500  | Server Error | Show "try again later"    |
 
 ### Error Message Format
+
 ```javascript
 try {
   const data = await getPatients();
@@ -390,6 +411,7 @@ try {
 ## Testing Quick Checklist
 
 ### Test Each Phase
+
 ```
 Phase 2: Clinics
 [ ] Login successful
@@ -422,6 +444,7 @@ Phase 6: Staff
 ## Common Backend Requirements
 
 ### CRUD Response Format
+
 ```json
 // List endpoint
 {
@@ -442,6 +465,7 @@ Phase 6: Staff
 ```
 
 ### CORS Configuration Required
+
 ```
 Access-Control-Allow-Origin: http://localhost:5173 (dev)
 Access-Control-Allow-Origin: https://traveljabs.com (prod)
@@ -451,6 +475,7 @@ Access-Control-Allow-Credentials: true
 ```
 
 ### JWT Token Verification
+
 - Backend must verify Bearer token in Authorization header
 - Return 401 if token invalid or expired
 - Include user info in GET /auth/me endpoint
@@ -482,12 +507,14 @@ npm run build
 ## Debugging Tips
 
 ### Check Login Token
+
 ```javascript
 // In browser console
-console.log(localStorage.getItem("authToken"))
+console.log(localStorage.getItem("authToken"));
 ```
 
 ### Monitor API Calls
+
 ```javascript
 // Open DevTools Network tab
 // Filter by XHR/Fetch
@@ -495,6 +522,7 @@ console.log(localStorage.getItem("authToken"))
 ```
 
 ### Verify User State
+
 ```javascript
 // In component
 const { user } = useAuth();
@@ -502,6 +530,7 @@ console.log("Current user:", user);
 ```
 
 ### Test API Endpoint Directly
+
 ```bash
 # Get clinics
 curl -H "Authorization: Bearer TOKEN" \
@@ -513,4 +542,3 @@ curl -X POST http://localhost:3000/api/patients \
   -H "Authorization: Bearer TOKEN" \
   -d '{"PatientFirstname":"John","PatientLastname":"Doe"}'
 ```
-
