@@ -64,5 +64,5 @@ export async function deletePatient(id) {
     throw new Error(`Failed to delete patient: ${response.statusText}`);
   }
 
-  return response.json();
+  return response.status === 204 ? null : response.json();
 }

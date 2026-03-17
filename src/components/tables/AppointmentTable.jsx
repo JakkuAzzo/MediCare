@@ -19,29 +19,33 @@ export default function AppointmentTable({ appointments, onDelete }) {
             <td colSpan="6">No appointments found</td>
           </tr>
         ) : (
-          appointments.map((apt) => (
-            <tr key={apt.id}>
-              <td>{apt.id}</td>
+          appointments.map((apt) => {
+            const appointmentId = apt.AppointmentID ?? apt.id;
+
+            return (
+            <tr key={appointmentId}>
+              <td>{appointmentId}</td>
               <td>{apt.AppointmentDatetime}</td>
               <td>{apt.AppointmentPatientID}</td>
               <td>{apt.AppointmentClinicID}</td>
-              <td>{apt.AppointmentStatusID}</td>
+              <td>{apt.AppointmentStatusName ?? apt.AppointmentStatusID}</td>
               <td>
                 <Link
-                  to={`/appointments/${apt.id}/edit`}
+                  to={`/appointments/${appointmentId}/edit`}
                   className="btn btn-sm btn-primary"
                 >
                   Reschedule
                 </Link>
                 <button
-                  onClick={() => onDelete(apt.id)}
+                  onClick={() => onDelete?.(appointmentId)}
                   className="btn btn-sm btn-delete"
                 >
                   Cancel
                 </button>
               </td>
             </tr>
-          ))
+            );
+          })
         )}
       </tbody>
     </table>

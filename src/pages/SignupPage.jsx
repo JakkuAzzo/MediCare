@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import ErrorMessage from "../components/common/ErrorMessage";
+import BASE_URL from "../config/api";
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ export default function SignupPage() {
     try {
       setIsLoading(true);
       // Call signup endpoint (adjust URL based on your backend)
-      const response = await fetch("http://localhost:3000/api/auth/signup", {
+      const response = await fetch(`${BASE_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

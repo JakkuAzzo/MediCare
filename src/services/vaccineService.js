@@ -64,5 +64,5 @@ export async function deleteVaccine(id) {
     throw new Error(`Failed to delete vaccine: ${response.statusText}`);
   }
 
-  return response.json();
+  return response.status === 204 ? null : response.json();
 }

@@ -5,6 +5,7 @@ import LoadingMessage from "./components/common/LoadingMessage";
 import Layout from "./components/layout/Layout";
 import DashboardPage from "./pages/DashboardPage";
 import ClinicsPage from "./pages/ClinicsPage";
+import ClinicFormPage from "./pages/ClinicFormPage";
 import PatientsPage from "./pages/PatientsPage";
 import PatientFormPage from "./pages/PatientFormPage";
 import AppointmentsPage from "./pages/AppointmentsPage";
@@ -12,6 +13,7 @@ import AppointmentFormPage from "./pages/AppointmentFormPage";
 import VaccinesPage from "./pages/VaccinesPage";
 import VaccineFormPage from "./pages/VaccineFormPage";
 import StaffPage from "./pages/StaffPage";
+import StaffFormPage from "./pages/StaffFormPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
@@ -44,6 +46,8 @@ function AppContent() {
       >
         <Route index element={<DashboardPage />} />
         <Route path="clinics" element={<ClinicsPage />} />
+        <Route path="clinics/new" element={<ClinicFormPage mode="create" />} />
+        <Route path="clinics/:id/edit" element={<ClinicFormPage mode="edit" />} />
         <Route path="patients" element={<PatientsPage />} />
         <Route
           path="patients/new"
@@ -72,6 +76,8 @@ function AppContent() {
           element={<VaccineFormPage mode="edit" />}
         />
         <Route path="staff" element={<StaffPage />} />
+        <Route path="staff/new" element={<StaffFormPage mode="create" />} />
+        <Route path="staff/:id/edit" element={<StaffFormPage mode="edit" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
 

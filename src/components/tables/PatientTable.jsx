@@ -18,28 +18,32 @@ export default function PatientTable({ patients, onDelete }) {
             <td colSpan="5">No patients found</td>
           </tr>
         ) : (
-          patients.map((patient) => (
-            <tr key={patient.id}>
-              <td>{patient.id}</td>
+          patients.map((patient) => {
+            const patientId = patient.PatientID ?? patient.id;
+
+            return (
+            <tr key={patientId}>
+              <td>{patientId}</td>
               <td>{patient.PatientFirstname}</td>
               <td>{patient.PatientLastname}</td>
               <td>{patient.Patientage}</td>
               <td>
                 <Link
-                  to={`/patients/${patient.id}/edit`}
+                  to={`/patients/${patientId}/edit`}
                   className="btn btn-sm btn-primary"
                 >
                   Edit
                 </Link>
                 <button
-                  onClick={() => onDelete(patient.id)}
+                  onClick={() => onDelete?.(patientId)}
                   className="btn btn-sm btn-delete"
                 >
                   Delete
                 </button>
               </td>
             </tr>
-          ))
+            );
+          })
         )}
       </tbody>
     </table>

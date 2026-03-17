@@ -17,29 +17,32 @@ export default function VaccineTable({ vaccines, onDelete }) {
             <td colSpan="4">No vaccines found</td>
           </tr>
         ) : (
-          vaccines.map((vaccine) => (
-            <tr key={vaccine.id}>
-              <td>{vaccine.id}</td>
+          vaccines.map((vaccine) => {
+            const vaccineId = vaccine.VaccineID ?? vaccine.id;
+            const vaccineCost = Number(vaccine.VaccineCost ?? 0);
+
+            return (
+            <tr key={vaccineId}>
+              <td>{vaccineId}</td>
               <td>{vaccine.VaccineName}</td>
-              <td>
-                £{vaccine.VaccineCost ? vaccine.VaccineCost.toFixed(2) : "0.00"}
-              </td>
+              <td>£{Number.isFinite(vaccineCost) ? vaccineCost.toFixed(2) : "0.00"}</td>
               <td>
                 <Link
-                  to={`/vaccines/${vaccine.id}/edit`}
+                  to={`/vaccines/${vaccineId}/edit`}
                   className="btn btn-sm btn-primary"
                 >
                   Edit
                 </Link>
                 <button
-                  onClick={() => onDelete(vaccine.id)}
+                  onClick={() => onDelete?.(vaccineId)}
                   className="btn btn-sm btn-delete"
                 >
                   Delete
                 </button>
               </td>
             </tr>
-          ))
+            );
+          })
         )}
       </tbody>
     </table>

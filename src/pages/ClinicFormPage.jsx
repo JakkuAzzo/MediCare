@@ -1,35 +1,35 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import PatientForm from "../components/forms/PatientForm";
+import ClinicForm from "../components/forms/ClinicForm";
 import LoadingMessage from "../components/common/LoadingMessage";
 import ErrorMessage from "../components/common/ErrorMessage";
 import {
-  getPatientById,
-  createPatient,
-  updatePatient
-} from "../services/patientService";
+  getClinicById,
+  createClinic,
+  updateClinic
+} from "../services/clinicService";
 
-export default function PatientFormPage({ mode }) {
+export default function ClinicFormPage({ mode }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const isEdit = mode === "edit";
 
-  const [patient, setPatient] = useState(null);
+  const [clinic, setClinic] = useState(null);
   const [loading, setLoading] = useState(isEdit);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     if (isEdit && id) {
-      loadPatient();
+      loadClinic();
     }
   }, [isEdit, id]);
 
-  async function loadPatient() {
+  async function loadClinic() {
     try {
       setLoading(true);
-      const data = await getPatientById(id);
-      setPatient(data);
+      const data = await getClinicById(id);
+      setClinic(data);
       setError(null);
     } catch (err) {
       setError(err.message);
@@ -43,16 +43,16 @@ export default function PatientFormPage({ mode }) {
       setSaving(true);
       const payload = {
         ...formData,
-        Patientage: Number(formData.Patientage)
+        ClinicManagerID: Number(formData.ClinicManagerID)
       };
 
       if (isEdit) {
-        await updatePatient(id, payload);
+        await updateClinic(id, payload);
       } else {
-        await createPatient(payload);
+        await createClinic(payload);
       }
 
-      navigate("/patients");
+      navigate("/clinics");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -64,9 +64,9 @@ export default function PatientFormPage({ mode }) {
 
   return (
     <div className="page">
-      <h1>{mode === "create" ? "Add Patient" : "Edit Patient"}</h1>
+      <h1>{isEdit ? "Edit Clinic" : "Add Clinic"}</h1>
       {error && <ErrorMessage message={error} />}
-      <PatientForm patient={patient} onSubmit={handleSubmit} isLoading={saving} />
+      <ClinicForm clinic={clinic} onSubmit={handleSubmit} isLoading={saving} />
     </div>
   );
 }

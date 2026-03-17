@@ -64,5 +64,5 @@ export async function deleteAppointment(id) {
     throw new Error(`Failed to delete appointment: ${response.statusText}`);
   }
 
-  return response.json();
+  return response.status === 204 ? null : response.json();
 }

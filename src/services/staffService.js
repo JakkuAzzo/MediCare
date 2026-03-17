@@ -64,5 +64,5 @@ export async function deleteStaff(id) {
     throw new Error(`Failed to delete staff member: ${response.statusText}`);
   }
 
-  return response.json();
+  return response.status === 204 ? null : response.json();
 }

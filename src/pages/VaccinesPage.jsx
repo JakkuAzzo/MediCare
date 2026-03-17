@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getVaccines, deleteVaccine } from "../services/vaccineService";
+import LoadingMessage from "../components/common/LoadingMessage";
+import ErrorMessage from "../components/common/ErrorMessage";
+import VaccineTable from "../components/tables/VaccineTable";
 
 export default function VaccinesPage() {
   const [vaccines, setVaccines] = useState([]);
@@ -12,7 +17,8 @@ export default function VaccinesPage() {
   async function loadVaccines() {
     try {
       setLoading(true);
-      // TODO: call getVaccines() from vaccineService
+      const data = await getVaccines();
+      setVaccines(data);
       setError(null);
     } catch (err) {
       setError(err.message);
@@ -21,13 +27,26 @@ export default function VaccinesPage() {
     }
   }
 
-  if (loading) return <p>Loading vaccines...</p>;
-  if (error) return <p className="error">Error: {error}</p>;
+  async function handleDelete(vaccineId) {
+    try {
+      await deleteVaccine(vaccineId);
+      setVaccines((prev) => prev.filter((item) => item.VaccineID !== vaccineId));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  if (loading) return <LoadingMessage />;
+  if (error) return <ErrorMessage message={error} />;
 
   return (
     <div className="page">
       <h1>Vaccines</h1>
       <p>View all vaccines</p>
+      <Link to="/vaccines/new" className="btn btn-primary">
+        Add Vaccine
+      </Link>
+      <VaccineTable vaccines={vaccines} onDelete={handleDelete} />
     </div>
   );
 }

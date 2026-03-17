@@ -16,23 +16,32 @@ export default function StaffTable({ staffMembers, onEdit, onDelete }) {
             <td colSpan="5">No staff found</td>
           </tr>
         ) : (
-          staffMembers.map((staff) => (
-            <tr key={staff.id}>
-              <td>{staff.id}</td>
-              <td>{staff.firstname}</td>
-              <td>{staff.lastname}</td>
-              <td>{staff.role}</td>
+          staffMembers.map((staff) => {
+            const staffId = staff.StaffID ?? staff.id;
+
+            return (
+            <tr key={staffId}>
+              <td>{staffId}</td>
+              <td>{staff.StaffFirstname ?? staff.firstname}</td>
+              <td>{staff.StaffLastname ?? staff.lastname}</td>
+              <td>{staff.StaffRole ?? staff.role}</td>
               <td>
-                <button className="btn btn-sm btn-primary">Edit</button>
                 <button
-                  onClick={() => onDelete(staff.id)}
+                  className="btn btn-sm btn-primary"
+                  onClick={() => onEdit?.(staffId)}
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => onDelete?.(staffId)}
                   className="btn btn-sm btn-delete"
                 >
                   Delete
                 </button>
               </td>
             </tr>
-          ))
+            );
+          })
         )}
       </tbody>
     </table>

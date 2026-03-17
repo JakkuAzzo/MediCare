@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import ErrorMessage from "../components/common/ErrorMessage";
+import BASE_URL from "../config/api";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -22,16 +23,13 @@ export default function ForgotPasswordPage() {
     try {
       setIsLoading(true);
       // Call forgot password endpoint (adjust URL based on your backend)
-      const response = await fetch(
-        "http://localhost:3000/api/auth/forgot-password",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ email })
-        }
-      );
+      const response = await fetch(`${BASE_URL}/auth/forgot-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      });
 
       if (!response.ok) {
         const data = await response.json();

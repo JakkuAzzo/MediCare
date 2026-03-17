@@ -44,6 +44,29 @@ npm run dev
 
 The application will open at `http://localhost:5173`.
 
+## App Screenshots
+
+The screenshots below were captured while both backend (`npm run dev` on port 3000)
+and frontend (`npm run dev` on port 5173) were running.
+
+### Clinics List (Live API Data)
+
+![Clinics page](src/assets/clinics-page.png)
+
+### Appointments List (Live API Data)
+
+![Appointments page](src/assets/appointments-page.png)
+
+## Integration Fixes Applied
+
+- Connected list pages to backend services for clinics, patients, appointments,
+  vaccines, and staff.
+- Replaced placeholder/TODO data-loading blocks with real API calls.
+- Updated table mappings to backend schema fields (`ClinicID`, `PatientID`,
+  `AppointmentID`, `VaccineID`, `StaffID`, etc.).
+- Fixed a runtime rendering issue on the vaccines page by normalizing vaccine
+  cost values before formatting.
+
 ### Build for Production
 
 ```bash

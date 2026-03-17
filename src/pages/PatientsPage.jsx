@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getPatients, deletePatient } from "../services/patientService";
+import LoadingMessage from "../components/common/LoadingMessage";
+import ErrorMessage from "../components/common/ErrorMessage";
+import PatientTable from "../components/tables/PatientTable";
 
 export default function PatientsPage() {
   const [patients, setPatients] = useState([]);
@@ -12,7 +17,8 @@ export default function PatientsPage() {
   async function loadPatients() {
     try {
       setLoading(true);
-      // TODO: call getPatients() from patientService
+      const data = await getPatients();
+      setPatients(data);
       setError(null);
     } catch (err) {
       setError(err.message);
@@ -21,13 +27,26 @@ export default function PatientsPage() {
     }
   }
 
-  if (loading) return <p>Loading patients...</p>;
-  if (error) return <p className="error">Error: {error}</p>;
+  async function handleDelete(patientId) {
+    try {
+      await deletePatient(patientId);
+      setPatients((prev) => prev.filter((item) => item.PatientID !== patientId));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  if (loading) return <LoadingMessage />;
+  if (error) return <ErrorMessage message={error} />;
 
   return (
     <div className="page">
       <h1>Patients</h1>
       <p>View all patients</p>
+      <Link to="/patients/new" className="btn btn-primary">
+        Add Patient
+      </Link>
+      <PatientTable patients={patients} onDelete={handleDelete} />
     </div>
   );
 }

@@ -1,35 +1,31 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import PatientForm from "../components/forms/PatientForm";
+import StaffForm from "../components/forms/StaffForm";
 import LoadingMessage from "../components/common/LoadingMessage";
 import ErrorMessage from "../components/common/ErrorMessage";
-import {
-  getPatientById,
-  createPatient,
-  updatePatient
-} from "../services/patientService";
+import { getStaffById, createStaff, updateStaff } from "../services/staffService";
 
-export default function PatientFormPage({ mode }) {
+export default function StaffFormPage({ mode }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const isEdit = mode === "edit";
 
-  const [patient, setPatient] = useState(null);
+  const [staff, setStaff] = useState(null);
   const [loading, setLoading] = useState(isEdit);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     if (isEdit && id) {
-      loadPatient();
+      loadStaff();
     }
   }, [isEdit, id]);
 
-  async function loadPatient() {
+  async function loadStaff() {
     try {
       setLoading(true);
-      const data = await getPatientById(id);
-      setPatient(data);
+      const data = await getStaffById(id);
+      setStaff(data);
       setError(null);
     } catch (err) {
       setError(err.message);
@@ -43,16 +39,17 @@ export default function PatientFormPage({ mode }) {
       setSaving(true);
       const payload = {
         ...formData,
-        Patientage: Number(formData.Patientage)
+        StaffRoleID: Number(formData.StaffRoleID),
+        StaffClinicID: Number(formData.StaffClinicID)
       };
 
       if (isEdit) {
-        await updatePatient(id, payload);
+        await updateStaff(id, payload);
       } else {
-        await createPatient(payload);
+        await createStaff(payload);
       }
 
-      navigate("/patients");
+      navigate("/staff");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -64,9 +61,9 @@ export default function PatientFormPage({ mode }) {
 
   return (
     <div className="page">
-      <h1>{mode === "create" ? "Add Patient" : "Edit Patient"}</h1>
+      <h1>{isEdit ? "Edit Staff" : "Add Staff"}</h1>
       {error && <ErrorMessage message={error} />}
-      <PatientForm patient={patient} onSubmit={handleSubmit} isLoading={saving} />
+      <StaffForm staff={staff} onSubmit={handleSubmit} isLoading={saving} />
     </div>
   );
 }

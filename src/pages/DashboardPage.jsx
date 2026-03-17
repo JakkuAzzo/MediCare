@@ -1,69 +1,88 @@
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import clinicImage from "../assets/clinic.jpg";
+import patientImage from "../assets/patient.jpg";
+import appointmentsImage from "../assets/appointments.jpg";
+import vaccinesImage from "../assets/vaccines.jpeg";
+import staffImage from "../assets/staff.png";
 
 export default function DashboardPage() {
   const { user } = useAuth();
 
+  const cards = [
+    {
+      title: "Clinics",
+      description: "Find nearby clinics, check locations, and plan appointments quickly.",
+      cta: "View Clinics",
+      to: "/clinics",
+      image: clinicImage,
+      alt: "Walk-in clinic waiting area"
+    },
+    {
+      title: "Patients",
+      description: "Create and update patient profiles with clean, searchable records.",
+      cta: "Manage Patients",
+      to: "/patients",
+      image: patientImage,
+      alt: "Patient in consultation"
+    },
+    {
+      title: "Appointments",
+      description: "Schedule, view, and edit bookings in one streamlined workflow.",
+      cta: "View Appointments",
+      to: "/appointments",
+      image: appointmentsImage,
+      alt: "Patient and clinician in a ward"
+    },
+    {
+      title: "Vaccines",
+      description: "Track vaccine availability and pricing with clear, fast access.",
+      cta: "View Vaccines",
+      to: "/vaccines",
+      image: vaccinesImage,
+      alt: "Vaccine vials and syringe"
+    },
+    {
+      title: "Staff",
+      description: "Manage team details and roles across clinics from one place.",
+      cta: "View Staff",
+      to: "/staff",
+      image: staffImage,
+      alt: "Healthcare staff group"
+    }
+  ];
+
+  const userName =
+    user?.FirstName || user?.name || user?.Email || user?.email || "there";
+
   return (
-    <div className="page">
-      <h1>Welcome to Travel Jabs</h1>
-      {user && (
+    <div className="page dashboard-page">
+      <section className="dashboard-hero">
+        <p className="dashboard-eyebrow">Travel Jabs Workspace</p>
+        <h1>Welcome back, {userName}.</h1>
         <p className="subtitle">
-          Hello {user.name || user.email}, welcome back!
+          Manage clinics, patients, appointments, vaccines, and staff through a
+          calm, focused dashboard.
         </p>
-      )}
+      </section>
 
       <div className="dashboard-grid">
-        <div className="dashboard-card">
-          <h3>🏥 Clinics</h3>
-          <p>Search and find convenient clinic locations</p>
-          <Link to="/clinics" className="btn btn-primary">
-            View Clinics
-          </Link>
-        </div>
-
-        <div className="dashboard-card">
-          <h3>👥 Patients</h3>
-          <p>Manage patient accounts and information</p>
-          <Link to="/patients" className="btn btn-primary">
-            Manage Patients
-          </Link>
-        </div>
-
-        <div className="dashboard-card">
-          <h3>📅 Appointments</h3>
-          <p>Schedule and manage vaccination appointments</p>
-          <Link to="/appointments" className="btn btn-primary">
-            View Appointments
-          </Link>
-        </div>
-
-        <div className="dashboard-card">
-          <h3>💉 Vaccines</h3>
-          <p>View and manage vaccine information</p>
-          <Link to="/vaccines" className="btn btn-primary">
-            View Vaccines
-          </Link>
-        </div>
-
-        <div className="dashboard-card">
-          <h3>👨‍⚕️ Staff</h3>
-          <p>View and manage staff members</p>
-          <Link to="/staff" className="btn btn-primary">
-            View Staff
-          </Link>
-        </div>
+        {cards.map(card => (
+          <article className="dashboard-card" key={card.title}>
+            <div className="dashboard-card-media-wrap">
+              <img className="dashboard-card-media" src={card.image} alt={card.alt} />
+            </div>
+            <div className="dashboard-card-content">
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <Link to={card.to} className="btn btn-primary">
+                {card.cta}
+              </Link>
+            </div>
+          </article>
+        ))}
       </div>
 
-      <div className="dashboard-info">
-        <h2>Quick Stats</h2>
-        <p>
-          Use the navigation above to access different sections of the system.
-        </p>
-        <p className="text-muted">
-          Vaccination management made simple and efficient.
-        </p>
-      </div>
     </div>
   );
 }
