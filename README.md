@@ -72,6 +72,7 @@ npm run format
 ### Components
 
 #### Common Components
+
 - `LoadingMessage` - Loading indicator
 - `ErrorMessage` - Error display
 - `SearchBar` - Search functionality
@@ -80,11 +81,13 @@ npm run format
 - `StatusBadge` - Status indicator
 
 #### Forms
+
 - `PatientForm` - Create/edit patients
 - `AppointmentForm` - Create/edit appointments
 - `VaccineForm` - Create/edit vaccines
 
 #### Tables
+
 - `ClinicTable` - Display clinics
 - `PatientTable` - Display patients
 - `AppointmentTable` - Display appointments
@@ -96,6 +99,7 @@ npm run format
 The application includes service files that support the following operations:
 
 #### Clinics
+
 - GET `/api/clinics` - List all clinics
 - GET `/api/clinics/:id` - Get clinic details
 - POST `/api/clinics` - Create clinic
@@ -103,6 +107,7 @@ The application includes service files that support the following operations:
 - DELETE `/api/clinics/:id` - Delete clinic
 
 #### Patients
+
 - GET `/api/patients` - List all patients
 - GET `/api/patients/:id` - Get patient details
 - POST `/api/patients` - Create patient
@@ -110,6 +115,7 @@ The application includes service files that support the following operations:
 - DELETE `/api/patients/:id` - Delete patient
 
 #### Appointments
+
 - GET `/api/appointments` - List all appointments
 - GET `/api/appointments/:id` - Get appointment details
 - POST `/api/appointments` - Create appointment
@@ -117,6 +123,7 @@ The application includes service files that support the following operations:
 - DELETE `/api/appointments/:id` - Cancel appointment
 
 #### Vaccines
+
 - GET `/api/vaccines` - List all vaccines
 - GET `/api/vaccines/:id` - Get vaccine details
 - POST `/api/vaccines` - Add vaccine
@@ -124,6 +131,7 @@ The application includes service files that support the following operations:
 - DELETE `/api/vaccines/:id` - Delete vaccine
 
 #### Staff
+
 - GET `/api/staff` - List all staff
 - GET `/api/staff/:id` - Get staff details
 - POST `/api/staff` - Add staff member
@@ -199,18 +207,21 @@ Run formatting with: `npm run format`
 ## User Stories Covered
 
 ### Phase 1 - Foundation
+
 - As a Patient, I want to search for clinics
 - As a Manager, I want to create patient accounts
 - As a Manager, I want to edit patient information
 - As a Manager, I want to delete patient accounts
 
 ### Phase 2 - Appointments & Vaccines
+
 - As a Patient, I want to book appointments
 - As a Manager, I want to reschedule appointments
 - As a Manager, I want to cancel appointments
 - As a Manager, I want to manage vaccines
 
 ### Phase 3 - Staff Management
+
 - As a Clinician, I want to view assigned appointments
 - As a Manager, I want to manage staff information
 
@@ -239,6 +250,7 @@ Run formatting with: `npm run format`
 Repository: `travelJabs-frontend`
 
 Make sure to:
+
 1. Keep the repository private
 2. Add `G.Jones@kingston.ac.uk` as a collaborator
 3. Regular commits with clear messages

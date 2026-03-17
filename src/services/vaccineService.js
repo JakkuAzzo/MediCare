@@ -1,32 +1,40 @@
-const BASE_URL = "http://localhost:3000/api";
+import BASE_URL, { getAuthHeaders } from "../config/api";
 
 export async function getVaccines() {
-  const response = await fetch(`${BASE_URL}/vaccines`);
+  const response = await fetch(`${BASE_URL}/vaccines`, {
+    method: "GET",
+    headers: getAuthHeaders()
+  });
+
   if (!response.ok) {
-    throw new Error("Failed to fetch vaccines");
+    throw new Error(`Failed to fetch vaccines: ${response.statusText}`);
   }
+
   return response.json();
 }
 
 export async function getVaccineById(id) {
-  const response = await fetch(`${BASE_URL}/vaccines/${id}`);
+  const response = await fetch(`${BASE_URL}/vaccines/${id}`, {
+    method: "GET",
+    headers: getAuthHeaders()
+  });
+
   if (!response.ok) {
-    throw new Error("Failed to fetch vaccine");
+    throw new Error(`Failed to fetch vaccine: ${response.statusText}`);
   }
+
   return response.json();
 }
 
 export async function createVaccine(vaccineData) {
   const response = await fetch(`${BASE_URL}/vaccines`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: getAuthHeaders(),
     body: JSON.stringify(vaccineData)
   });
 
   if (!response.ok) {
-    throw new Error("Failed to create vaccine");
+    throw new Error(`Failed to create vaccine: ${response.statusText}`);
   }
 
   return response.json();
@@ -35,14 +43,12 @@ export async function createVaccine(vaccineData) {
 export async function updateVaccine(id, vaccineData) {
   const response = await fetch(`${BASE_URL}/vaccines/${id}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: getAuthHeaders(),
     body: JSON.stringify(vaccineData)
   });
 
   if (!response.ok) {
-    throw new Error("Failed to update vaccine");
+    throw new Error(`Failed to update vaccine: ${response.statusText}`);
   }
 
   return response.json();
@@ -50,11 +56,12 @@ export async function updateVaccine(id, vaccineData) {
 
 export async function deleteVaccine(id) {
   const response = await fetch(`${BASE_URL}/vaccines/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
+    headers: getAuthHeaders()
   });
 
   if (!response.ok) {
-    throw new Error("Failed to delete vaccine");
+    throw new Error(`Failed to delete vaccine: ${response.statusText}`);
   }
 
   return response.json();

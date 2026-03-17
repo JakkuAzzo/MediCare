@@ -1,32 +1,40 @@
-const BASE_URL = "http://localhost:3000/api";
+import BASE_URL, { getAuthHeaders } from "../config/api";
 
 export async function getClinics() {
-  const response = await fetch(`${BASE_URL}/clinics`);
+  const response = await fetch(`${BASE_URL}/clinics`, {
+    method: "GET",
+    headers: getAuthHeaders()
+  });
+
   if (!response.ok) {
-    throw new Error("Failed to fetch clinics");
+    throw new Error(`Failed to fetch clinics: ${response.statusText}`);
   }
+
   return response.json();
 }
 
 export async function getClinicById(id) {
-  const response = await fetch(`${BASE_URL}/clinics/${id}`);
+  const response = await fetch(`${BASE_URL}/clinics/${id}`, {
+    method: "GET",
+    headers: getAuthHeaders()
+  });
+
   if (!response.ok) {
-    throw new Error("Failed to fetch clinic");
+    throw new Error(`Failed to fetch clinic: ${response.statusText}`);
   }
+
   return response.json();
 }
 
 export async function createClinic(clinicData) {
   const response = await fetch(`${BASE_URL}/clinics`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: getAuthHeaders(),
     body: JSON.stringify(clinicData)
   });
 
   if (!response.ok) {
-    throw new Error("Failed to create clinic");
+    throw new Error(`Failed to create clinic: ${response.statusText}`);
   }
 
   return response.json();
@@ -35,14 +43,12 @@ export async function createClinic(clinicData) {
 export async function updateClinic(id, clinicData) {
   const response = await fetch(`${BASE_URL}/clinics/${id}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: getAuthHeaders(),
     body: JSON.stringify(clinicData)
   });
 
   if (!response.ok) {
-    throw new Error("Failed to update clinic");
+    throw new Error(`Failed to update clinic: ${response.statusText}`);
   }
 
   return response.json();
@@ -50,11 +56,12 @@ export async function updateClinic(id, clinicData) {
 
 export async function deleteClinic(id) {
   const response = await fetch(`${BASE_URL}/clinics/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
+    headers: getAuthHeaders()
   });
 
   if (!response.ok) {
-    throw new Error("Failed to delete clinic");
+    throw new Error(`Failed to delete clinic: ${response.statusText}`);
   }
 
   return response.json();

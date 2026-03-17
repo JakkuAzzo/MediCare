@@ -1,4 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import LoadingMessage from "./components/common/LoadingMessage";
 import Layout from "./components/layout/Layout";
 import DashboardPage from "./pages/DashboardPage";
 import ClinicsPage from "./pages/ClinicsPage";
@@ -12,10 +15,29 @@ import StaffPage from "./pages/StaffPage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
-export default function App() {
+function AppContent() {
+  const { loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="page">
+        <LoadingMessage />
+      </div>
+    );
+  }
+
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/login" element={<LoginPage />} />
+
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        }
+      >
         <Route index element={<DashboardPage />} />
         <Route path="clinics" element={<ClinicsPage />} />
         <Route path="patients" element={<PatientsPage />} />
@@ -46,9 +68,14 @@ export default function App() {
           element={<VaccineFormPage mode="edit" />}
         />
         <Route path="staff" element={<StaffPage />} />
-        <Route path="login" element={<LoginPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
+
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
+}
+
+export default function App() {
+  return <AppContent />;
 }

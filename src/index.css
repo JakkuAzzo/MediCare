@@ -100,6 +100,82 @@ p {
   color: #3498db;
 }
 
+.nav-user {
+  color: #ecf0f1;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.btn-logout {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.btn-logout:hover {
+  color: #e74c3c;
+}
+
+/* Login Page */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  margin: 0 0 2rem 0;
+  font-size: 0.95rem;
+}
+
+.login-box .form {
+  margin: 1.5rem 0 0 0;
+}
+
+.btn-block {
+  width: 100%;
+  margin: 0;
+}
+
+.login-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #95a5a6;
+  margin-top: 1.5rem;
+}
+
 /* Container */
 .page-container {
   max-width: 1200px;
@@ -385,4 +461,87 @@ p {
 }
 .text-right {
   text-align: right;
+}
+
+/* Dashboard */
+.subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 2rem 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  text-align: center;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.dashboard-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.dashboard-card .btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid #fff;
+  margin: 0;
+}
+
+.dashboard-card .btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-info {
+  background-color: #ecf0f1;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.dashboard-info h2 {
+  margin-top: 0;
+}
+
+.text-muted {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Form Validation Errors */
+.form-group .error {
+  border-color: #e74c3c;
+  background-color: #fadbd8;
+}
+
+.error-text {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
 }
