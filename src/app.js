@@ -20,6 +20,20 @@ app.use(
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Travel Jabs API",
+    endpoints: {
+      health: "GET /api/health",
+      patients: "GET/POST/PUT/DELETE /api/patients",
+      appointments: "GET/POST/PUT/DELETE /api/appointments",
+      clinics: "GET/POST/PUT/DELETE /api/clinics",
+      vaccines: "GET/POST/PUT/DELETE /api/vaccines",
+      staff: "GET/POST/PUT/DELETE /api/staff"
+    }
+  });
+});
+
 app.get("/api/health", (req, res) => {
   res.json({ message: "Travel Jabs API is running" });
 });
