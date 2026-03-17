@@ -14,4 +14,14 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
+pool.getConnection().catch(error => {
+  console.error("Database connection error:", error.message);
+  console.error("DB Config:", {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER
+  });
+});
+
 export default pool;
