@@ -70,6 +70,26 @@ class AuthViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func loginAsGuest() {
+        isLoading = true
+        errorMessage = nil
+        
+        // Create guest user
+        let guestUser = User(
+            id: UUID().uuidString,
+            name: "Guest User",
+            email: "guest@medicare.local",
+            role: "guest",
+            createdAt: Date().description
+        )
+        
+        // Set guest token to indicate guest session
+        userDefaults.set("guest_token_\(UUID().uuidString)", forKey: "authToken")
+        currentUser = guestUser
+        isAuthenticated = true
+        isLoading = false
+    }
+    
     func logout() {
         apiService.logout()
             .receive(on: DispatchQueue.main)

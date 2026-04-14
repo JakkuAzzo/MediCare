@@ -245,6 +245,15 @@ struct User: Codable, Identifiable {
     let name: String
     let email: String
     let role: String
+    let createdAt: String?
+    
+    init(id: String, name: String, email: String, role: String, createdAt: String? = nil) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.role = role
+        self.createdAt = createdAt
+    }
 }
 
 struct Clinic: Codable, Identifiable {

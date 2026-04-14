@@ -110,13 +110,30 @@ struct LoginView: View {
                     .cornerRadius(8)
                     .disabled(authViewModel.isLoading || email.isEmpty || password.isEmpty)
                     
-                    // Signup Link
-                    NavigationLink(destination: SignupView()) {
-                        Text("Don't have an account? Sign up")
-                            .font(AppFonts.footnote)
-                            .foregroundColor(.white)
-                            .underline()
+                    // Guest Button
+                    Button(action: {
+                        authViewModel.loginAsGuest()
+                    }) {
+                        Text("Continue as Guest")
+                            .font(AppFonts.headline)
+                            .foregroundColor(AppTheme.primary)
                     }
+                    .frame(maxWidth: .infinity)
+                    .padding(12)
+                    .background(Color.white)
+                    .cornerRadius(8)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(AppTheme.primary, lineWidth: 2))
+                    
+                    // Signup Button
+                    NavigationLink(destination: SignupView()) {
+                        Text("Create New Account")
+                            .font(AppFonts.headline)
+                            .foregroundColor(.white)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(12)
+                    .background(AppTheme.success)
+                    .cornerRadius(8)
                 }
                 .padding(24)
                 .background(Color.white)
