@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme LastUpgradeVersion = "1400" version = "1.3">
+   <BuildAction parallelizeBuildables = "YES" buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry buildForTesting = "YES" buildForRunning = "YES" buildForProfiling = "YES" buildForArchiving = "YES" buildForAnalyzing = "YES">
+            <BuildableReference BuildableIdentifier = "primary" BlueprintIdentifier = "D12345670010BBBB" BuildableName = "MediCareApp.app" BlueprintName = "MediCareApp" ReferencedContainer = "container:MediCareApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction buildConfiguration = "Debug" selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+      </Testables>
+   </TestAction>
+   <LaunchAction buildConfiguration = "Debug" selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB" launchStyle = "0" useCustomExecutablePath = "NO" ignoresPersistentStateOnLaunch = "NO" debugDocumentVersioning = "YES" debugServiceExtensionIdentifier = "internal" saveActivityMarkerName = "">
+      <BuildableProductRunnable BuildableIdentifier = "primary" BlueprintIdentifier = "D12345670010BBBB" BuildableName = "MediCareApp.app" BlueprintName = "MediCareApp" ReferencedContainer = "container:MediCareApp.xcodeproj">
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction buildConfiguration = "Release" shouldUseLaunchSchemeArgsEnv = "YES" savedToolIdentifier = "" useCustomExecutablePath = "NO" debugDocumentVersioning = "YES">
+      <BuildableProductRunnable BuildableIdentifier = "primary" BlueprintIdentifier = "D12345670010BBBB" BuildableName = "MediCareApp.app" BlueprintName = "MediCareApp" ReferencedContainer = "container:MediCareApp.xcodeproj">
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction buildConfiguration = "Release" revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
