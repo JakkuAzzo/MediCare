@@ -1,0 +1,30 @@
+{
+  "name": "medicare-app",
+  "version": "1.0.0",
+  "description": "MediCare iOS Application - Travel Vaccination Management",
+  "author": "MediCare Development Team",
+  "license": "ISC",
+  "keywords": [
+    "healthcare",
+    "vaccination",
+    "travel",
+    "medicine",
+    "ios",
+    "swift",
+    "swiftui"
+  ],
+  "scripts": {
+    "ios:build": "xcodebuild -workspace MediCareApp.xcworkspace -scheme MediCareApp -configuration Release -derivedDataPath build",
+    "ios:clean": "xcodebuild -workspace MediCareApp.xcworkspace -scheme MediCareApp clean",
+    "ios:test": "xcodebuild -workspace MediCareApp.xcworkspace -scheme MediCareApp test",
+    "ios:archive": "xcodebuild -workspace MediCareApp.xcworkspace -scheme MediCareApp -archivePath build/MediCareApp.xcarchive archive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JakkuAzzo/MediCare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JakkuAzzo/MediCare/issues"
+  },
+  "homepage": "https://github.com/JakkuAzzo/MediCare"
+}
