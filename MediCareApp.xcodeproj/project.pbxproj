@@ -5,262 +5,351 @@
 	};
 	objectVersion = 56;
 	objects = {
+
 /* Begin PBXBuildFile section */
-		D1234567001A000001 /* MediCareAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001A000002; };
-		D1234567001A000003 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001A000004; };
-		D1234567001A000005 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001A000006; };
-		D1234567001A000007 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001A000008; };
-		D1234567001A000009 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123456700100000A; };
-		D123456700100000B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123456700100000C; };
-		D123456700100000D /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123456700100000E; };
-		D123456700100000F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001000010; };
-		D1234567001000011 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001000012; };
-		D1234567001000013 /* AppointmentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001000014; };
-		D1234567001000015 /* PatientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001000016; };
-		D1234567001000017 /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001000018; };
-		D1234567001000019 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123456700100001A; };
-		D123456700100001B /* AppointmentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123456700100001C; };
-		D123456700100001D /* PatientFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123456700100001E; };
-		D123456700100001F /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1234567001000020; };
+		A1B2C3000000000000000001 /* MediCareAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000101 /* MediCareAppApp.swift */; };
+		A1B2C3000000000000000002 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000102 /* AppTheme.swift */; };
+		A1B2C3000000000000000003 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000103 /* APIService.swift */; };
+		A1B2C3000000000000000004 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000104 /* AuthViewModel.swift */; };
+		A1B2C3000000000000000005 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000105 /* LoginView.swift */; };
+		A1B2C3000000000000000006 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000106 /* SignupView.swift */; };
+		A1B2C3000000000000000007 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000107 /* FormField.swift */; };
+		A1B2C3000000000000000008 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000108 /* StatusBadge.swift */; };
+		A1B2C3000000000000000009 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000109 /* MainTabView.swift */; };
+		A1B2C300000000000000000A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C300000000000000010A /* DashboardView.swift */; };
+		A1B2C300000000000000000B /* AppointmentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C300000000000000010B /* AppointmentsListView.swift */; };
+		A1B2C300000000000000000C /* PatientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C300000000000000010C /* PatientsListView.swift */; };
+		A1B2C300000000000000000D /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C300000000000000010D /* VaccinesListView.swift */; };
+		A1B2C300000000000000000E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C300000000000000010E /* ProfileView.swift */; };
+		A1B2C300000000000000000F /* AppointmentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C300000000000000010F /* AppointmentFormView.swift */; };
+		A1B2C3000000000000000010 /* PatientFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3000000000000000110 /* PatientFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D1234567001A000002 /* MediCareAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediCareAppApp.swift; sourceTree = "<group>"; };
-		D1234567001A000004 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme/AppTheme.swift; sourceTree = "<group>"; };
-		D1234567001A000006 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/APIService.swift; sourceTree = "<group>"; };
-		D1234567001A000008 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels/AuthViewModel.swift; sourceTree = "<group>"; };
-		D123456700100000A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Authentication/LoginView.swift; sourceTree = "<group>"; };
-		D123456700100000C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Authentication/SignupView.swift; sourceTree = "<group>"; };
-		D123456700100000E /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/FormField.swift; sourceTree = "<group>"; };
-		D1234567001000010 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/MainTabView.swift; sourceTree = "<group>"; };
-		D1234567001000012 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Dashboard/DashboardView.swift; sourceTree = "<group>"; };
-		D1234567001000014 /* AppointmentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Appointments/AppointmentsListView.swift; sourceTree = "<group>"; };
-		D1234567001000016 /* PatientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Patients/PatientsListView.swift; sourceTree = "<group>"; };
-		D1234567001000018 /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Vaccines/VaccinesListView.swift; sourceTree = "<group>"; };
-		D123456700100001A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Profile/ProfileView.swift; sourceTree = "<group>"; };
-		D123456700100001C /* AppointmentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Forms/AppointmentFormView.swift; sourceTree = "<group>"; };
-		D123456700100001E /* PatientFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Forms/PatientFormView.swift; sourceTree = "<group>"; };
-		D1234567001000020 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/StatusBadge.swift; sourceTree = "<group>"; };
-		D12345670010AAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MediCareApp/Info.plist; sourceTree = "<group>"; };
-		D12345670010BBBB /* MediCareApp */ = {isa = PBXNativeTarget; buildConfigurationList = D12345670010CCCC; buildPhases = (D12345670010DDDD, D12345670010EEEE); buildRules = (); dependencies = (); name = MediCareApp; productName = MediCareApp; productReference = D12345670010FFFF; productType = "com.apple.product-type.application"; };
-		D12345670010FFFF /* MediCareApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediCareApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1234567001AAAAA /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1400; LastUpgradeCheck = 1400; TargetAttributes = (D12345670010BBBB, {CreatedOnToolsVersion = 14.0; }); }; buildConfigurationList = D1234567001BBBBB; classPrefix = ""; objectVersion = 56; roots = (D1234567001CCCCC); targets = (D12345670010BBBB); };
-		D1234567001CCCCC /* PBXGroup */ = {isa = PBXGroup; children = (D1234567001DDDDD, D1234567001EEEEE); sourceTree = "<group>"; };
-		D1234567001DDDDD /* MediCareApp */ = {isa = PBXGroup; children = (D1234567001A000002, D1234567001FFFFF, D12345670011AAAA, D12345670011BBBB, D12345670011CCCC, D12345670010AAAA); name = MediCareApp; sourceTree = "<group>"; };
-		D1234567001EEEEE /* Products */ = {isa = PBXGroup; children = (D12345670010FFFF); name = Products; sourceTree = "<group>"; };
-		D1234567001FFFFF /* Theme */ = {isa = PBXGroup; children = (D1234567001A000004); name = Theme; sourceTree = "<group>"; };
-		D12345670011AAAA /* Services */ = {isa = PBXGroup; children = (D1234567001A000006); name = Services; sourceTree = "<group>"; };
-		D12345670011BBBB /* ViewModels */ = {isa = PBXGroup; children = (D1234567001A000008); name = ViewModels; sourceTree = "<group>"; };
-		D12345670011CCCC /* Views */ = {isa = PBXGroup; children = (D1234567001000010, D12345670011DDDD, D12345670011EEEE, D12345670011FFFF, D1234567001200AA, D1234567001200BB, D1234567001200CC); name = Views; sourceTree = "<group>"; };
-		D12345670011DDDD /* Authentication */ = {isa = PBXGroup; children = (D123456700100000A, D123456700100000C); name = Authentication; sourceTree = "<group>"; };
-		D12345670011EEEE /* Components */ = {isa = PBXGroup; children = (D123456700100000E, D1234567001000020); name = Components; sourceTree = "<group>"; };
-		D12345670011FFFF /* Dashboard */ = {isa = PBXGroup; children = (D1234567001000012); name = Dashboard; sourceTree = "<group>"; };
-		D1234567001200AA /* Appointments */ = {isa = PBXGroup; children = (D1234567001000014); name = Appointments; sourceTree = "<group>"; };
-		D1234567001200BB /* Patients */ = {isa = PBXGroup; children = (D1234567001000016); name = Patients; sourceTree = "<group>"; };
-		D1234567001200CC /* Vaccines */ = {isa = PBXGroup; children = (D1234567001000018); sourceTree = "<group>"; };
-		D1234567001200DD /* Forms */ = {isa = PBXGroup; children = (D123456700100001C, D123456700100001E); name = Forms; sourceTree = "<group>"; };
-		D1234567001200EE /* Profile */ = {isa = PBXGroup; children = (D123456700100001A); name = Profile; sourceTree = "<group>"; };
+		A1B2C3000000000000000101 /* MediCareAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediCareAppApp.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000102 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000103 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000104 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000105 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000106 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000107 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000108 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000109 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A1B2C300000000000000010A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A1B2C300000000000000010B /* AppointmentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsListView.swift; sourceTree = "<group>"; };
+		A1B2C300000000000000010C /* PatientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsListView.swift; sourceTree = "<group>"; };
+		A1B2C300000000000000010D /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesListView.swift; sourceTree = "<group>"; };
+		A1B2C300000000000000010E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A1B2C300000000000000010F /* AppointmentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentFormView.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000110 /* PatientFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientFormView.swift; sourceTree = "<group>"; };
+		A1B2C3000000000000000111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3000000000000000112 /* MediCareApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = MediCareApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3000000000000000201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3000000000000000301 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3000000000000000302 /* MediCareApp */,
+				A1B2C3000000000000000303 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3000000000000000302 /* MediCareApp */ = {
+			isa = PBXGroup;
+			path = MediCareApp/MediCareApp;
+			sourceTree = SOURCE_ROOT;
+			children = (
+				A1B2C3000000000000000101 /* MediCareAppApp.swift */,
+				A1B2C3000000000000000310 /* Theme */,
+				A1B2C3000000000000000311 /* Services */,
+				A1B2C3000000000000000312 /* ViewModels */,
+				A1B2C3000000000000000313 /* Views */,
+				A1B2C3000000000000000111 /* Info.plist */,
+			);
+		};
+		A1B2C3000000000000000303 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3000000000000000112 /* MediCareApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3000000000000000310 /* Theme */ = {
+			isa = PBXGroup;
+			path = Theme;
+			sourceTree = "<group>";
+			children = (
+				A1B2C3000000000000000102 /* AppTheme.swift */,
+			);
+		};
+		A1B2C3000000000000000311 /* Services */ = {
+			isa = PBXGroup;
+			path = Services;
+			sourceTree = "<group>";
+			children = (
+				A1B2C3000000000000000103 /* APIService.swift */,
+			);
+		};
+		A1B2C3000000000000000312 /* ViewModels */ = {
+			isa = PBXGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+			children = (
+				A1B2C3000000000000000104 /* AuthViewModel.swift */,
+			);
+		};
+		A1B2C3000000000000000313 /* Views */ = {
+			isa = PBXGroup;
+			path = Views;
+			sourceTree = "<group>";
+			children = (
+				A1B2C3000000000000000109 /* MainTabView.swift */,
+				A1B2C3000000000000000314 /* Authentication */,
+				A1B2C3000000000000000315 /* Components */,
+				A1B2C3000000000000000316 /* Dashboard */,
+				A1B2C3000000000000000317 /* Appointments */,
+				A1B2C3000000000000000318 /* Patients */,
+				A1B2C3000000000000000319 /* Vaccines */,
+				A1B2C300000000000000031A /* Profile */,
+				A1B2C300000000000000031B /* Forms */,
+			);
+		};
+		A1B2C3000000000000000314 /* Authentication */ = {
+			isa = PBXGroup;
+			path = Authentication;
+			sourceTree = "<group>";
+			children = (
+				A1B2C3000000000000000105 /* LoginView.swift */,
+				A1B2C3000000000000000106 /* SignupView.swift */,
+			);
+		};
+		A1B2C3000000000000000315 /* Components */ = {
+			isa = PBXGroup;
+			path = Components;
+			sourceTree = "<group>";
+			children = (
+				A1B2C3000000000000000107 /* FormField.swift */,
+				A1B2C3000000000000000108 /* StatusBadge.swift */,
+			);
+		};
+		A1B2C3000000000000000316 /* Dashboard */ = {
+			isa = PBXGroup;
+			path = Dashboard;
+			sourceTree = "<group>";
+			children = (
+				A1B2C300000000000000010A /* DashboardView.swift */,
+			);
+		};
+		A1B2C3000000000000000317 /* Appointments */ = {
+			isa = PBXGroup;
+			path = Appointments;
+			sourceTree = "<group>";
+			children = (
+				A1B2C300000000000000010B /* AppointmentsListView.swift */,
+			);
+		};
+		A1B2C3000000000000000318 /* Patients */ = {
+			isa = PBXGroup;
+			path = Patients;
+			sourceTree = "<group>";
+			children = (
+				A1B2C300000000000000010C /* PatientsListView.swift */,
+			);
+		};
+		A1B2C3000000000000000319 /* Vaccines */ = {
+			isa = PBXGroup;
+			path = Vaccines;
+			sourceTree = "<group>";
+			children = (
+				A1B2C300000000000000010D /* VaccinesListView.swift */,
+			);
+		};
+		A1B2C300000000000000031A /* Profile */ = {
+			isa = PBXGroup;
+			path = Profile;
+			sourceTree = "<group>";
+			children = (
+				A1B2C300000000000000010E /* ProfileView.swift */,
+			);
+		};
+		A1B2C300000000000000031B /* Forms */ = {
+			isa = PBXGroup;
+			path = Forms;
+			sourceTree = "<group>";
+			children = (
+				A1B2C300000000000000010F /* AppointmentFormView.swift */,
+				A1B2C3000000000000000110 /* PatientFormView.swift */,
+			);
+		};
 /* End PBXGroup section */
 
+/* Begin PBXNativeTarget section */
+		D12345670010BBBB /* MediCareApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3000000000000000501 /* Build configuration list for PBXNativeTarget "MediCareApp" */;
+			buildPhases = (
+				A1B2C3000000000000000202 /* Sources */,
+				A1B2C3000000000000000201 /* Frameworks */,
+				A1B2C3000000000000000203 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MediCareApp;
+			productName = MediCareApp;
+			productReference = A1B2C3000000000000000112 /* MediCareApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3000000000000000401 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D12345670010BBBB = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3000000000000000502 /* Build configuration list for PBXProject "MediCareApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3000000000000000301;
+			productRefGroup = A1B2C3000000000000000303 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D12345670010BBBB /* MediCareApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3000000000000000203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		D12345670010EEEE /* Sources */ = {
+		A1B2C3000000000000000202 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1234567001A000001 /* MediCareAppApp.swift in Sources */,
-				D1234567001A000003 /* AppTheme.swift in Sources */,
-				D1234567001A000005 /* APIService.swift in Sources */,
-				D1234567001A000007 /* AuthViewModel.swift in Sources */,
-				D1234567001A000009 /* LoginView.swift in Sources */,
-				D123456700100000B /* SignupView.swift in Sources */,
-				D123456700100000D /* FormField.swift in Sources */,
-				D123456700100000F /* MainTabView.swift in Sources */,
-				D1234567001000011 /* DashboardView.swift in Sources */,
-				D1234567001000013 /* AppointmentsListView.swift in Sources */,
-				D1234567001000015 /* PatientsListView.swift in Sources */,
-				D1234567001000017 /* VaccinesListView.swift in Sources */,
-				D1234567001000019 /* ProfileView.swift in Sources */,
-				D123456700100001B /* AppointmentFormView.swift in Sources */,
-				D123456700100001D /* PatientFormView.swift in Sources */,
-				D123456700100001F /* StatusBadge.swift in Sources */,
+				A1B2C3000000000000000001 /* MediCareAppApp.swift in Sources */,
+				A1B2C3000000000000000002 /* AppTheme.swift in Sources */,
+				A1B2C3000000000000000003 /* APIService.swift in Sources */,
+				A1B2C3000000000000000004 /* AuthViewModel.swift in Sources */,
+				A1B2C3000000000000000005 /* LoginView.swift in Sources */,
+				A1B2C3000000000000000006 /* SignupView.swift in Sources */,
+				A1B2C3000000000000000007 /* FormField.swift in Sources */,
+				A1B2C3000000000000000008 /* StatusBadge.swift in Sources */,
+				A1B2C3000000000000000009 /* MainTabView.swift in Sources */,
+				A1B2C300000000000000000A /* DashboardView.swift in Sources */,
+				A1B2C300000000000000000B /* AppointmentsListView.swift in Sources */,
+				A1B2C300000000000000000C /* PatientsListView.swift in Sources */,
+				A1B2C300000000000000000D /* VaccinesListView.swift in Sources */,
+				A1B2C300000000000000000E /* ProfileView.swift in Sources */,
+				A1B2C300000000000000000F /* AppointmentFormView.swift in Sources */,
+				A1B2C3000000000000000010 /* PatientFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D1234567001BBBBC /* Debug */ = {
+		A1B2C3000000000000000601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_DIALECT = "c++20";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_DIALECT = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D1234567001BBBBD /* Release */ = {
+		A1B2C3000000000000000602 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_DIALECT = "c++20";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_DIALECT = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZE_FOR_SIZE = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D12345670010DDDD /* Debug */ = {
+		A1B2C3000000000000000701 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MediCareApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MediCareApp/MediCareApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.medicare.app";
-				PRODUCT_NAME = MediCareApp;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakkuazzo.medicare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		D12345670010FFFF /* Release */ = {
+		A1B2C3000000000000000702 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MediCareApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MediCareApp/MediCareApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.medicare.app";
-				PRODUCT_NAME = MediCareApp;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakkuazzo.medicare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -268,25 +357,26 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D12345670010CCCC /* Build configuration list for PBXNativeTarget "MediCareApp" */ = {
+		A1B2C3000000000000000501 /* Build configuration list for PBXNativeTarget "MediCareApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D12345670010DDDD /* Debug */,
-				D12345670010FFFF /* Release */,
+				A1B2C3000000000000000701 /* Debug */,
+				A1B2C3000000000000000702 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1234567001BBBBB /* Build configuration list for PBXProject "MediCareApp" */ = {
+		A1B2C3000000000000000502 /* Build configuration list for PBXProject "MediCareApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D1234567001BBBBC /* Debug */,
-				D1234567001BBBBD /* Release */,
+				A1B2C3000000000000000601 /* Debug */,
+				A1B2C3000000000000000602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
 	};
-	rootObject = D1234567001AAAAA /* Project object */;
+	rootObject = A1B2C3000000000000000401 /* Project object */;
 }

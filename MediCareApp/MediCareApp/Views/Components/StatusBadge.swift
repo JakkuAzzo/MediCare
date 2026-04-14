@@ -17,7 +17,7 @@ struct StatusBadge: View {
             .foregroundColor(color)
             .padding(.horizontal, 12)
             .padding(.vertical, 6)
-            .background(Color(color).opacity(0.15))
+            .background(color.opacity(0.15))
             .cornerRadius(12)
     }
 }

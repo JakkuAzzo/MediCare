@@ -32,7 +32,8 @@ class APIService {
     
     func logout() -> AnyPublisher<Void, APIError> {
         let endpoint = "\(baseURL)/auth/logout"
-        return request(endpoint, method: "POST", body: EmptyRequest())
+        let publisher: AnyPublisher<EmptyResponse, APIError> = request(endpoint, method: "POST", body: EmptyRequest())
+        return publisher
             .map { _ in }
             .eraseToAnyPublisher()
     }
@@ -56,7 +57,8 @@ class APIService {
     
     func deleteClinic(_ id: String) -> AnyPublisher<Void, APIError> {
         let endpoint = "\(baseURL)/clinics/\(id)"
-        return request(endpoint, method: "DELETE", body: EmptyRequest())
+        let publisher: AnyPublisher<EmptyResponse, APIError> = request(endpoint, method: "DELETE", body: EmptyRequest())
+        return publisher
             .map { _ in }
             .eraseToAnyPublisher()
     }
@@ -80,7 +82,8 @@ class APIService {
     
     func deletePatient(_ id: String) -> AnyPublisher<Void, APIError> {
         let endpoint = "\(baseURL)/patients/\(id)"
-        return request(endpoint, method: "DELETE", body: EmptyRequest())
+        let publisher: AnyPublisher<EmptyResponse, APIError> = request(endpoint, method: "DELETE", body: EmptyRequest())
+        return publisher
             .map { _ in }
             .eraseToAnyPublisher()
     }
@@ -104,7 +107,8 @@ class APIService {
     
     func deleteAppointment(_ id: String) -> AnyPublisher<Void, APIError> {
         let endpoint = "\(baseURL)/appointments/\(id)"
-        return request(endpoint, method: "DELETE", body: EmptyRequest())
+        let publisher: AnyPublisher<EmptyResponse, APIError> = request(endpoint, method: "DELETE", body: EmptyRequest())
+        return publisher
             .map { _ in }
             .eraseToAnyPublisher()
     }
@@ -128,7 +132,8 @@ class APIService {
     
     func deleteVaccine(_ id: String) -> AnyPublisher<Void, APIError> {
         let endpoint = "\(baseURL)/vaccines/\(id)"
-        return request(endpoint, method: "DELETE", body: EmptyRequest())
+        let publisher: AnyPublisher<EmptyResponse, APIError> = request(endpoint, method: "DELETE", body: EmptyRequest())
+        return publisher
             .map { _ in }
             .eraseToAnyPublisher()
     }
@@ -305,5 +310,7 @@ struct CreateVaccineRequest: Codable {
     let manufacturer: String
     let dosingSchedule: String
 }
+
+struct EmptyResponse: Codable {}
 
 struct EmptyRequest: Codable {}

@@ -107,7 +107,7 @@ struct SignupView: View {
                                     .foregroundColor(AppTheme.warning)
                             }
                             .padding()
-                            .background(Color(AppTheme.warning).opacity(0.1))
+                                    .background(AppTheme.warning.opacity(0.1))
                             .cornerRadius(8)
                         }
                         
@@ -120,7 +120,7 @@ struct SignupView: View {
                                     .foregroundColor(AppTheme.danger)
                             }
                             .padding()
-                            .background(Color(AppTheme.danger).opacity(0.1))
+                                    .background(AppTheme.danger.opacity(0.1))
                             .cornerRadius(8)
                         }
                         

@@ -72,7 +72,7 @@ struct ProfileView: View {
                                 .font(.caption)
                         }
                         .padding()
-                        .background(Color(AppTheme.danger).opacity(0.1))
+                        .background(AppTheme.danger.opacity(0.1))
                         .foregroundColor(AppTheme.danger)
                         .cornerRadius(8)
                     }
